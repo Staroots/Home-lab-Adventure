@@ -20,7 +20,7 @@
 - Disabled Secure Boot
 - Booted successfully into Proxmox installer
 
-## 🖥 Proxmox Installation
+##  Proxmox Installation
 - Chose **ext4** as file system for SSD
 - Installed Proxmox VE 8.4 successfully
 - Set static IP: `192.168.1.100`
