@@ -27,7 +27,24 @@
 - Verified Web UI login at: `https://192.168.1.100:8006`
 - Logged in as `root` under Linux PAM
 
-###  Post-Install Cleanup
+##  Post-Install Cleanup
 - Removed the "No Subscription" Nag Screen:
   ```bash
   sed -i.bak "s/data.status !== 'Active'/false/g" /usr/share/javascript/proxmox-widget-toolkit/proxmoxlib.js
+
+### 2025-06-02
+
+## 1. **Proxmox VM Setup**
+- Installed Ubuntu Server in a VM via Proxmox
+- Assigned 4 vCPUs, 16GB RAM, and 100GB disk
+- Created `/opt/minecraft` as working directory
+
+## 2. **Docker Setup**
+- Encountered issues due to *Snap version of Docker*
+- Removed Snap Docker (`snap remove docker`)
+- Installed Docker Engine and Compose Plugin using official Docker APT repo:
+  ```bash
+  sudo apt install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+## 3. **Dcoker Compose**
+- Created docker-compose.yaml for Forge Minecraft server.
+- launched and successfully connected to server through Minecraft client. 
