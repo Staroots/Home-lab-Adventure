@@ -47,4 +47,17 @@
   sudo apt install docker-ce docker-ce-cli containerd.io docker-compose-plugin
 ## 3. **Dcoker Compose**
 - Created docker-compose.yaml for Forge Minecraft server.
-- launched and successfully connected to server through Minecraft client. 
+- launched and successfully connected to server through Minecraft client.
+
+### 2025-06-12 
+
+## 1. **Reverse Proxy VM Setup**
+
+- Uploaded Debian 12 cloud image (`debian-12-genericcloud-amd64.qcow2`) to Proxmox via SCP  
+- Imported image as a disk to storage location `/mnt/sdb1/images/`  
+- Created new VM (ID: 102) and attached imported disk  
+- Successfully configured and booted the VM into Debian 12 login prompt  
+- Installed and configured UFW firewall  
+- Installed and configured Caddy with a test `Caddyfile` for `daemonroots.dev`  
+- Installed `acme.sh` as root for future DNS validation and certificate automation  
+- Set up secondary user account (`demroots`) for SSH access  
