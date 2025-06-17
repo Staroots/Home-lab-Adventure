@@ -1,7 +1,7 @@
 # Proxmox Setup (To-Do)
 
 ## Installation
-- Installed Proxmox ( Input version number of proxmox and method of installation IE usb)
+- Installed Proxmox 
 - Installed to dedicated SSD
 - Created separate ZFS pool for VMs and containers usin:
   - 6TB Toshiba MG08 HDD (Media/Data)
