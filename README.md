@@ -13,7 +13,6 @@ This repository documents the build, configurations, and evolition of my persona
   - Security Tools (Security Onion, Fail2Ban, ect.)
   - Plex or Jellyfin (Media Server)
   - Modded Minecraft Server
-    - Dev environment to work on my own mods
 - Practice DevOps Concepts and infrastructure management
 
 ## Base System
