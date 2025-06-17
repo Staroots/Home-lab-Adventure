@@ -12,9 +12,3 @@
 - Ubuntu Server
 - Docker
 - Plex or Jellyfin, Minecraft, Nextcloud, Security Onion
-
-## Status
-- Hardware assembled
-- BIOS Updated
-- RAM Installed and Tested: 0 Errors reported
-- Changing OS installations to Proxmox for VMs and docker containers
