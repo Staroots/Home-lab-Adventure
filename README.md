@@ -16,9 +16,9 @@ This repository documents the build, configurations, and evolition of my persona
 - Practice DevOps Concepts and infrastructure management
 
 ## Base System
-- **Hypervisor**: Proxmox VE (installed over Ubuntu Server)
+- **Hypervisor**: Proxmox VE
 - ** Primary VM/container stack**
-  - Plex or Jellyfin in LXC or VM
+  - Plex or Jellyfin VM
   - Minecraft In dedicated Docker container
   - Security Onion in VM monitoring the services
   - Reverse proxy (Ngix or traefik)
