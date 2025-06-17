@@ -10,7 +10,7 @@
 ** Configuration
 - Created Static IP for Proxmox host
 - Enabled SSH and web UI access
-- Updated repositories to remove enterrise subscrition nag
+- Updated repositories to remove enterprise subscrition nag
 - Created backup schedule to Cold Storage (planned)
 
 ## Next Steps
