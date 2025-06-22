@@ -14,6 +14,6 @@
 - Created backup schedule to Cold Storage (planned)
 
 ## Next Steps
-- Create initial LXC templates for Ubuntu & Alpine
+- Create initial LXC templates for Ubuntu
 - Set up cloud-init
 - Install Terraform provider for Proxmox (DevOps practice)
