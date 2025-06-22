@@ -58,6 +58,21 @@
 - Created new VM (ID: 102) and attached imported disk  
 - Successfully configured and booted the VM into Debian 12 login prompt  
 - Installed and configured UFW firewall  
-- Installed and configured Caddy with a test `Caddyfile` for `daemonroots.dev`  
+- Installed and configured Caddy with a test `Caddyfile` for domain.  
 - Installed `acme.sh` as root for future DNS validation and certificate automation  
-- Set up secondary user account (`demroots`) for SSH access  
+- Set up secondary user account for SSH access  
+
+### 2025-6-19
+
+## 1. **Rebuilt Reverse Proxy VM**
+
+Set up reverseproxy VM (Debian 12 iso) as initial ingress and firewall layer.
+- Installed minimal system w/ SSH and system utilities
+- Configured APT security updates with unattended-upgrades
+- Installed core tools: curl, vim, git, htop, ufw, fail2ban
+- Enabled UFW: deny incoming, allow outgoing; allowed ports 22, 80, 443
+- Installed Caddy from official repo; configured basic test site (`:80 { respond "Caddy is working!" 200 }`)
+- Verified HTTP response via `curl http://localhost`
+- Created jail.local for Fail2ban; enabled sshd jail using /var/log/auth.log with systemd backend
+- Verified active jail via fail2ban-client
+- Snapshot taken in Proxmox: `pre-caddy-https-setup`
