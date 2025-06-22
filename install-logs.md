@@ -34,7 +34,7 @@
 
 ### 2025-06-02
 
-## 1. **Proxmox VM Setup**
+## 1. **Proxmox MC VM Setup**
 - Installed Ubuntu Server in a VM via Proxmox
 - Assigned 4 vCPUs, 16GB RAM, and 100GB disk
 - Created `/opt/minecraft` as working directory
