@@ -109,3 +109,4 @@ Set up reverseproxy VM (Debian 12 iso) as initial ingress and firewall layer.
   - **Port 443** → Reverse Proxy VM (HTTPS)
   - **Port 25565** → Minecraft VM (Forge Server)
 - Successfully connected externally to Minecraft server using: Minecraft application
+- Configured UFW to deny 22 from external hosts
