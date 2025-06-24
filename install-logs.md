@@ -1,5 +1,5 @@
 #Installation Log
-
+---
 ### 2025-05-31
 - Assembled Hardware
 - Installed Ubuntu 12
@@ -33,7 +33,7 @@
   sed -i.bak "s/data.status !== 'Active'/false/g" /usr/share/javascript/proxmox-widget-toolkit/proxmoxlib.js
 
 ### 2025-06-02
-
+---
 ## 1. **Proxmox MC VM Setup**
 - Installed Ubuntu Server in a VM via Proxmox
 - Assigned 4 vCPUs, 16GB RAM, and 100GB disk
@@ -50,7 +50,7 @@
 - launched and successfully connected to server through Minecraft client.
 
 ### 2025-06-12 
-
+---
 ## 1. **Reverse Proxy VM Setup**
 
 - Uploaded Debian 12 cloud image (`debian-12-genericcloud-amd64.qcow2`) to Proxmox via SCP  
@@ -63,7 +63,7 @@
 - Set up secondary user account for SSH access  
 
 ### 2025-6-19
-
+---
 ## 1. **Rebuilt Reverse Proxy VM**
 
 Set up reverseproxy VM (Debian 12 iso) as initial ingress and firewall layer.
@@ -76,3 +76,36 @@ Set up reverseproxy VM (Debian 12 iso) as initial ingress and firewall layer.
 - Created jail.local for Fail2ban; enabled sshd jail using /var/log/auth.log with systemd backend
 - Verified active jail via fail2ban-client
 - Snapshot taken in Proxmox: `pre-caddy-https-setup`
+
+## 2025-06-23
+---
+### 🧱 Minecraft Server Setup
+- Rebuilt Minecraft server as a **Debian 12 VM**.
+- Installed **Docker** and **Docker Compose**.
+- Created directory structure: `~/minecraft/`
+- Wrote and saved `docker-compose.yml` with:
+  - `itzg/minecraft-server` image
+  - Configured for **Forge**
+- Launched server via `docker compose up -d`
+- Verified:
+  - Server container is running
+  - Port is open internally
+  - Local Minecraft client can connect via `mc.daemonroots.dev:25565`
+--
+
+### 🌐 Reverse Proxy (Caddy) Setup
+- Installed **Caddy** on a separate Debian 12 VM.
+- Configured with `acme.sh` using Porkbun DNS API:
+  - `Porkbun_API_Key` and `Porkbun_SECRET_API_Key` set in environment
+- Set DNS A record for `mc.daemonroots.dev`
+- Configured Caddyfile to forward requests
+- Confirmed Caddy listens on ports **80** and **443**
+- Tested domain with [SSL Labs](https://www.ssllabs.com/ssltest/)
+  - **Scored A rating**
+--
+
+### 🌍 External Access Configuration
+- Configured router:
+  - **Port 443** → Reverse Proxy VM (HTTPS)
+  - **Port 25565** → Minecraft VM (Forge Server)
+- Successfully connected externally to Minecraft server using: Minecraft application
