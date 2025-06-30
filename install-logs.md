@@ -97,7 +97,7 @@ Set up reverseproxy VM (Debian 12 iso) as initial ingress and firewall layer.
 - Installed **Caddy** on a separate Debian 12 VM.
 - Configured with `acme.sh` using Porkbun DNS API:
   - `Porkbun_API_Key` and `Porkbun_SECRET_API_Key` set in environment
-- Set DNS A record for `mc.daemonroots.dev`
+- Set DNS A record set
 - Configured Caddyfile to forward requests
 - Confirmed Caddy listens on ports **80** and **443**
 - Tested domain with [SSL Labs](https://www.ssllabs.com/ssltest/)
